@@ -4,7 +4,6 @@ import './App.css';
 const App = () => {
   const [display, setDisplay] = useState('');
 
-
   return (
     <div className="App">
     
@@ -16,15 +15,14 @@ const App = () => {
         <p>Remove Text</p>
       </MyButton>
 
-     <FirstComponent 
-       message={display}
-     />
+      <p>{display}</p>
     </div>
   );
 }
 
 export default App;
 
+// reusable custom button component
 const MyButton = (props) => {
   const useCustomButtonStyles = {
     backgroundColor: 'gold',
@@ -44,10 +42,4 @@ const MyButton = (props) => {
     </>
   )};
 
-  const FirstComponent = ({ message }) => {
-    return (
-      <>
-        <p>{message}</p>
-      </>
-    );
-  }
+  
