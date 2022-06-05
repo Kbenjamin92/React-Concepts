@@ -1,25 +1,54 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [display, setDisplay] = useState('');
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+      <MyButton onClick={() => setDisplay('Hello React!')}>
+        <p>Display Text</p>
+      </MyButton>
+      <br/>      
+      <MyButton onClick={() => setDisplay('')}>
+        <p>Remove Text</p>
+      </MyButton>
+
+     <FirstComponent 
+       message={display}
+     />
     </div>
   );
 }
 
 export default App;
+
+const MyButton = (props) => {
+  const useCustomButtonStyles = {
+    backgroundColor: 'gold',
+    color: 'black',
+    border: '1px solid transparent',
+    borderRadius: '5px',
+    margin: '5px',
+    transform: 'scale(2);'
+  }
+  return (
+    <>
+      <button 
+      style={useCustomButtonStyles}
+      onClick={props.onClick}
+      >
+      {props.children}
+      </button>
+    </>
+  )};
+
+  const FirstComponent = ({ message }) => {
+    return (
+      <>
+        <p>{message}</p>
+      </>
+    );
+  }
