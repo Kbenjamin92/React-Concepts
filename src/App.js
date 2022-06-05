@@ -32,7 +32,6 @@ const MyButton = (props) => {
     border: '1px solid transparent',
     borderRadius: '5px',
     margin: '5px',
-    transform: 'scale(2);'
   }
   return (
     <>
