@@ -26,10 +26,10 @@ export default function App() {
     getData();
   });
 
-  const list = items.map((items, keys) => {
+  const list = items.map((item, keys) => {
     return (
       <div key={keys}>
-        <p>{items}</p>
+        <p>{item}</p>
       </div>
     );
   });
