@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import "./styles.css";
+import "./App.css"
 import axios from "axios";
+import Card from './Card';
 
 export default function App() {
   const [value, setValue] = useState("");
@@ -24,7 +25,7 @@ export default function App() {
 
   useEffect(() => {
     getData();
-  });
+  }, []);
 
   const list = items.map((item, keys) => {
     return (
@@ -54,6 +55,8 @@ export default function App() {
       <MyButton onClick={removeAllItems}>Remove Items</MyButton>
       {list}
       {apiList}
+
+      <Card />
     </div>
   );
 }
